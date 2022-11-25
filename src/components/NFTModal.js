@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Icon, Modal, Segment } from "semantic-ui-react";
-// import { Web3Auth } from "@web3auth/modal";
 
 const NFTModal = ({ firstReward, secondReward, couponCode }) => {
   const [firstOpen, setFirstOpen] = React.useState(false);
