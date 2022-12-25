@@ -1,12 +1,17 @@
 import "./App.css";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import ViewNFT from "./pages/ViewNFT";
+import Activity from "./pages/Activity";
 
 function App() {
   return (
-    <div>
-      <ViewNFT />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" element={<ViewNFT />} />
+
+        <Route path="/activity" element={<Activity />} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

@@ -6,7 +6,7 @@ import Wallet from "./Wallet";
 const Navbar = () => {
   return (
     <div>
-      <Menu pointing secondary>
+      <Menu pointing secondary style={{ background: "#f5f5f5" }}>
         <Menu.Item name="home">
           {/* <Image src={ClientLogo} style={{ width: "10", height: "30" }} /> */}
           <img
@@ -22,7 +22,7 @@ const Navbar = () => {
             color: "grey",
           }}
         >
-          Home | Dashboard | About
+          {/* Home | Dashboard | About */}
         </p>
 
         <Menu.Menu position="right">

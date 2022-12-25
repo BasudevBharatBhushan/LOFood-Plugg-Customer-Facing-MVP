@@ -11,6 +11,7 @@ const NFTCard = ({
   secondReward,
   couponCode,
   exclusivity,
+  rewardShow,
 }) => {
   return (
     <div className="cardDiv">
@@ -40,6 +41,7 @@ const NFTCard = ({
           firstReward={firstReward}
           secondReward={secondReward}
           couponCode={couponCode}
+          rewardShow={rewardShow}
         />
       </Card>
     </div>

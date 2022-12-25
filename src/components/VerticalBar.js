@@ -9,13 +9,12 @@ import {
   Grid,
   Transition,
 } from "semantic-ui-react";
-import NFTCard from "./NFTCard";
 
-import GoldNFT from "../img/Gold.png";
-import SilverNFT from "../img/Silver.png";
-import DiamondNFT from "../img/cropDiamond.gif";
+import { useNavigate } from "react-router-dom";
 
-const VerticalBar = () => {
+const VerticalBar = ({ children }) => {
+  const navigate = useNavigate();
+
   return (
     <div style={{ height: "80vh", marginBottom: "0px" }}>
       <Sidebar.Pushable as={Segment}>
@@ -27,55 +26,30 @@ const VerticalBar = () => {
           vertical
           visible
           width="thin"
+          style={{
+            background: "#555555",
+          }}
         >
-          <Menu.Item as="a">
+          <Menu.Item
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             <Icon name="home" />
             Collectibles
           </Menu.Item>
-          <a href="https://lofoods.fit/">
-            <Menu.Item as="a" style={{ background: "black" }}>
-              <Icon name="angle double right" />
-              Lo Food!
-            </Menu.Item>
-          </a>
+
+          <Menu.Item
+            onClick={() => {
+              navigate("/activity");
+            }}
+          >
+            <Icon name="chart bar" />
+            Activity
+          </Menu.Item>
         </Sidebar>
         <Sidebar.Pusher style={{ marginLeft: "11%" }}>
-          <Segment basic>
-            <Grid columns={3} divided="vertically">
-              <Grid.Row>
-                <Grid.Column>
-                  <NFTCard
-                    nftImage={GoldNFT}
-                    nftTitle={"LO GOLD NFT"}
-                    exclusivity={"Rarity 30/100"}
-                    firstReward={"30% OFF on your all orders"}
-                    secondReward={"Ticket to Sunburn"}
-                    couponCode={"30"}
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <NFTCard
-                    nftImage={SilverNFT}
-                    nftTitle={"LO SILVER NFT"}
-                    exclusivity={"Airdrop NFT"}
-                    firstReward={"10% OFF on your all orders"}
-                    secondReward={"Free Movie Tickets #"}
-                    couponCode={"10"}
-                  />
-                </Grid.Column>
-                <Grid.Column>
-                  <NFTCard
-                    nftImage={DiamondNFT}
-                    nftTitle={"The Diamond NFT"}
-                    exclusivity={"Exclusive"}
-                    firstReward={"50% OFF on your all orders"}
-                    secondReward={"Free 1 Night Stay at ITC"}
-                    couponCode={"50"}
-                  />
-                </Grid.Column>
-              </Grid.Row>
-            </Grid>
-          </Segment>
+          {children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </div>
