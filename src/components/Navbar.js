@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Menu, Segment, Image } from "semantic-ui-react";
-import ClientLogo from "../img/clientlogo.webp";
+import ClientLogo from "../img/KindLifeLogo.png";
 import Wallet from "./Wallet";
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
           {/* <Image src={ClientLogo} style={{ width: "10", height: "30" }} /> */}
           <img
             src={ClientLogo}
-            style={{ width: "50px", height: "50px", marginLeft: "45px" }}
+            style={{ width: "100px", height: "50px", marginLeft: "1px" }}
           />
         </Menu.Item>
         <p

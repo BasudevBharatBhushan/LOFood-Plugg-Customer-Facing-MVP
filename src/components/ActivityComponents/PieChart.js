@@ -25,8 +25,9 @@ const PieChart = () => {
     <div
       style={{
         textAlign: "center",
-        marginLeft: "20px",
-        width: "60%",
+        // marginLeft: "20px",
+
+        width: "100%",
         height: "100%",
         display: "inline-block",
       }}
@@ -35,11 +36,14 @@ const PieChart = () => {
         style={{ float: "left" }}
         data={data}
         options={{
+          layout: {
+            padding: 0,
+          },
           responsive: true,
           plugins: {
             title: {
               //   fontSize: 30,
-              text: "Value Saved",
+              // text: "Value Saved",
               display: true,
               font: { size: 20 },
             },
